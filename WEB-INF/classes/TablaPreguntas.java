@@ -48,7 +48,9 @@ public class TablaPreguntas extends HttpServlet{
 				aux = res.getInt("id_Pregunta_multiple");
 				
 				if(aux != aux2){
-					preguntasM.add(pregunta);
+					if(pregunta!=null){
+						preguntasM.add(pregunta);
+					}
 					pregunta = new PPreguntaM();
 					pregunta.setId(aux);
 					pregunta.setTexto(res.getString("texto"));
