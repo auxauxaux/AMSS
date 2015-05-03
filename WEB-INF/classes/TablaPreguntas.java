@@ -29,36 +29,37 @@ public class TablaPreguntas extends HttpServlet{
 								
 				preguntas.add(pregunta);
 			}
-			String queryM = "SELECT Opcion.id_Opcion, Opcion.texto, Opcion.posicion, Opcion.id_pregunta, Pregunta_multiple.id_Pregunta_multiple, Pregunta_multiple.texto, Pregunta_multiple.fecha, Pregunta_multiple.id_administracion FROM Opcion LEFT JOIN Pregunta_multiple ON Opcion.id_pregunta = Pregunta_multiple.id_Pregunta_multiple ORDER BY id_Pregunta_multiple";
-			
-			res = dbc.executeQuery(queryM);
-			
-			int aux = -1, aux2;
-			boolean flag = false;
-			
-			
+			String queryPM = "SELECT id_Pregunta_multiple, texto, fecha, id_administracion FROM Pregunta_multiple";
+
+			res = dbc.executeQuery(queryPM);
+
 			while(res.next()){
-				PPreguntaM pregunta = null;
-				POpcion opcion = new POpcion();
-				opcion.setId(res.getInt("id_Opcion"));
-				opcion.setTexto(res.getString("texto"));
-				opcion.setPosicion(res.getInt("posicion"));
-				opcion.setIdP(res.getInt("id_pregunta"));
-				aux2 = aux;
-				aux = res.getInt("id_Pregunta_multiple");
+			
+				PPreguntaM pregunta = new PPreguntaM();
+				pregunta.setId(res.getInt("id_Pregunta_multiple"));
+				pregunta.setTexto(res.getString("texto"));
+				pregunta.setFecha(res.getDate("fecha"));
+				pregunta.setIdA(res.getString("id_administracion"));
 				
-				if(aux != aux2){
-					if(pregunta!=null){
-						preguntasM.add(pregunta);
-					}
-					pregunta = new PPreguntaM();
-					pregunta.setId(aux);
-					pregunta.setTexto(res.getString("texto"));
-					pregunta.setFecha(res.getDate("fecha"));
-					pregunta.setIdA(res.getString("id_administracion"));
-				}
-				if(pregunta != null){
-					pregunta.add(opcion);
+				preguntasM.add(pregunta);
+				
+			}
+
+			for(int i=0;i<preguntasM.size();i++){
+				PPreguntaM p = preguntasM.get(i);
+				
+				String queryM = "SELECT Opcion.id_Opcion, Opcion.texto, Opcion.posicion, Opcion.id_pregunta, Opcion.id_pregunta FROM Opcion WHERE id_pregunta="+p.getId()+" ORDER BY id_opcion";
+				
+				res = dbc.executeQuery(queryM);
+				
+				while(res.next()){					
+					POpcion opcion = new POpcion();
+					opcion.setId(res.getInt("id_Opcion"));
+					opcion.setTexto(res.getString("texto"));
+					opcion.setPosicion(res.getInt("posicion"));
+					opcion.setIdP(res.getInt("id_pregunta"));
+					
+					 p.add(opcion);
 				}
 			}
 			request.setAttribute("preguntas",preguntas);
