@@ -8,6 +8,8 @@ import javax.servlet.annotation.WebServlet;
 
 public class AgregarAdministrador extends HttpServlet{
 
+	private static final long serialVersionUID = -6293495395580116052L;
+
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
 
 		try{

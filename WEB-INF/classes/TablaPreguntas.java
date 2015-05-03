@@ -8,6 +8,8 @@ import java.util.Date;
 
 public class TablaPreguntas extends HttpServlet{
 
+	private static final long serialVersionUID = 8669659510068960004L;
+
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
 
 		try{

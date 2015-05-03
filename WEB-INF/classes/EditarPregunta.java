@@ -8,6 +8,8 @@ import javax.servlet.annotation.WebServlet;
 
 public class EditarPregunta extends HttpServlet{
 
+	 private static final long serialVersionUID = 7865566270494810244L;
+
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
 
 		try{

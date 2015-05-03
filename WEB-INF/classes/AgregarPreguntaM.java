@@ -9,6 +9,8 @@ import java.text.SimpleDateFormat;
 
 public class AgregarPreguntaM extends HttpServlet{
 
+	private static final long serialVersionUID = 6058077547437234890L;
+
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
 
 		try{

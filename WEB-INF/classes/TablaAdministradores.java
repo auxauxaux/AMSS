@@ -7,6 +7,8 @@ import java.util.ArrayList;
 
 public class TablaAdministradores extends HttpServlet{
 
+	private static final long serialVersionUID = 8264626975466688353L;
+
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
 
 		try{

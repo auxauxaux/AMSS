@@ -8,6 +8,8 @@ import javax.servlet.annotation.WebServlet;
 
 public class Logout extends HttpServlet{
 
+	private static final long serialVersionUID = -6635008861043906183L;
+
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
 			doGet(request, response);
 	}
