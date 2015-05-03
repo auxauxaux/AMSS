@@ -1,0 +1,366 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  version="3.0"
+  metadata-complete="true">
+
+<display-name>
+	AMSS
+</display-name>
+
+<session-config>
+	<session-timeout>
+		30
+	</session-timeout>
+</session-config>
+<!--Usuario y password de base de datos-->
+<context-param> 
+	<description>
+		Usuario base de datos
+	</description>
+	<!--variable con la que lo saca el servlet, id--> 
+	<param-name>
+		usuario
+	</param-name> 
+	<param-value>
+		root
+	</param-value> 
+</context-param>
+
+<context-param> 
+	<description>
+		Password base de datos
+	</description> 
+	<param-name>
+		pass
+	</param-name> 
+	<param-value>
+		root
+	</param-value> 
+</context-param>
+
+<context-param> 
+	<description>
+		Base de datos
+	</description> 
+	<param-name>
+		base
+	</param-name> 
+	<param-value>
+		mydb
+	</param-value> 
+</context-param> 
+<context-param> 
+	<description>
+		Llave AES
+	</description> 
+	<param-name>
+		llave
+	</param-name> 
+	<param-value>
+		root
+	</param-value> 
+</context-param> 
+
+<!-- ***************Login****************-->
+<servlet>
+
+	 	<servlet-name>
+			 ServletLogin
+		</servlet-name>
+
+		<servlet-class>
+			 Login
+		</servlet-class>
+		
+
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			ServletLogin
+		</servlet-name>
+
+		<url-pattern>
+			/login
+		</url-pattern>
+
+</servlet-mapping>
+<!-- ***************Logout****************-->
+<servlet>
+
+	 	<servlet-name>
+			 ServletLogout
+		</servlet-name>
+		
+		<servlet-class>
+			 Logout
+		</servlet-class>
+		
+
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			ServletLogout
+		</servlet-name>
+
+		<url-pattern>
+			/logout
+		</url-pattern>
+
+</servlet-mapping>
+<!-- ***************Tabla de administradores****************-->
+<servlet>
+
+	 	<servlet-name>
+			 TablaAdmin
+		</servlet-name>
+
+		<servlet-class>
+			 TablaAdministradores
+		</servlet-class>
+		
+
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			TablaAdmin
+		</servlet-name>
+
+		<url-pattern>
+			/administradores
+		</url-pattern>
+
+</servlet-mapping>
+<!-- ***************Agregar Administrador****************-->
+<servlet>
+
+	 	<servlet-name>
+			 AgregarAdmin
+		</servlet-name>
+		
+		<servlet-class>
+			 AgregarAdministrador
+		</servlet-class>
+		
+
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			AgregarAdmin
+		</servlet-name>
+
+		<url-pattern>
+			/altaAdministrador
+		</url-pattern>
+
+</servlet-mapping>
+<!-- ***************Editar Administrador****************-->
+<servlet>
+
+	 	<servlet-name>
+			 EditAdmin
+		</servlet-name>
+		
+		<servlet-class>
+			 EditarAdministrador
+		</servlet-class>
+		
+
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			EditAdmin
+		</servlet-name>
+
+		<url-pattern>
+			/editaradmin
+		</url-pattern>
+
+</servlet-mapping>
+<!-- ***************Sub Editar Administrador****************-->
+<servlet>
+
+	 	<servlet-name>
+			 subEditAdmin
+		</servlet-name>
+		
+		<servlet-class>
+			 SubmitEditarAdministrador
+		</servlet-class>
+		
+
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			subEditAdmin
+		</servlet-name>
+
+		<url-pattern>
+			/subedit
+		</url-pattern>
+
+</servlet-mapping>
+<!-- ***************Tabla Preguntas****************-->
+<servlet>
+
+	 	<servlet-name>
+			 preguntas
+		</servlet-name>
+		
+		<servlet-class>
+			 TablaPreguntas
+		</servlet-class>
+		
+
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			preguntas
+		</servlet-name>
+
+		<url-pattern>
+			/preguntas
+		</url-pattern>
+
+</servlet-mapping>
+<!-- ***************Eliminar Admiinistrador****************-->
+<servlet>
+
+	 	<servlet-name>
+			 eliminarAdmin
+		</servlet-name>
+		
+		<servlet-class>
+			 EliminarAdministrador
+		</servlet-class>
+		
+
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			eliminarAdmin
+		</servlet-name>
+
+		<url-pattern>
+			/eliminaradmin
+		</url-pattern>
+
+</servlet-mapping>
+<!-- ***************Agregar Pregunta****************-->
+<servlet>
+
+	 	<servlet-name>
+			 altaPregunta
+		</servlet-name>
+		
+		<servlet-class>
+			 AgregarPregunta
+		</servlet-class>
+		
+
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			altaPregunta
+		</servlet-name>
+
+		<url-pattern>
+			/altaPregunta
+		</url-pattern>
+
+</servlet-mapping>
+<!-- ***************Editar Pregunta****************-->
+<servlet>
+
+	 	<servlet-name>
+			 EditPregunta
+		</servlet-name>
+		
+		<servlet-class>
+			 EditarPregunta
+		</servlet-class>
+		
+
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			EditPregunta
+		</servlet-name>
+
+		<url-pattern>
+			/editar_pregunta_abierta
+		</url-pattern>
+
+</servlet-mapping>
+<!-- ***************Sub Editar Pregunta****************-->
+<servlet>
+
+	 	<servlet-name>
+			 subEditPregunta
+		</servlet-name>
+		
+		<servlet-class>
+			 SubmitEditarPregunta
+		</servlet-class>
+		
+
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			subEditPregunta
+		</servlet-name>
+
+		<url-pattern>
+			/sub_pregunta
+		</url-pattern>
+
+</servlet-mapping>
+<!-- ***************Sub Editar Pregunta****************-->
+<servlet>
+
+	 	<servlet-name>
+			 eliminarPregunta
+		</servlet-name>
+		
+		<servlet-class>
+			 EliminarPregunta
+		</servlet-class>
+		
+
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			eliminarPregunta
+		</servlet-name>
+
+		<url-pattern>
+			/eliminar_pregunta
+		</url-pattern>
+
+</servlet-mapping>
+</web-app>
