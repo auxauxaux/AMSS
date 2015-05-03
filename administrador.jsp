@@ -18,6 +18,9 @@
 		
 	</c:choose>	
 	<a href="./logout">log out</a>
+	<form action="./preguntas" method="post">
+		<input type="submit" value="Manejar Entidades" />
+	</form>
 
 </body>
 </html>

@@ -9,7 +9,7 @@ public class PPreguntaM{
 	private ArrayList<POpcion> opciones;
 	
 	public PPreguntaM(){
-		
+		opciones = new ArrayList<POpcion>();
 	}
 	
 	public PPreguntaM(int id, String texto, Date fecha, String idA){
