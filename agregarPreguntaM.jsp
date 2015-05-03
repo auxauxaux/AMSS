@@ -40,7 +40,7 @@
 	</head>
 	<body>
 	
-	<form method = "post" name = "preguntaM" onsubmit="return (validate());" action = "./altaPreguntaM">
+	<form method = "post" name = "preguntaM" onsubmit="return (validate());" action = "./agregar_preguntaM">
 	            <center>
 	                <div id ="agregarAdministrador">
 	                    <fieldset>

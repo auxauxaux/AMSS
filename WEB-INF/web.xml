@@ -363,4 +363,29 @@
 		</url-pattern>
 
 </servlet-mapping>
+<!-- ***************Agregar PreguntaM****************-->
+<servlet>
+
+	 	<servlet-name>
+			 agregarPreguntaM
+		</servlet-name>
+		
+		<servlet-class>
+			 AgregarPreguntaM
+		</servlet-class>
+		
+
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			agregarPreguntaM
+		</servlet-name>
+
+		<url-pattern>
+			/agregar_preguntaM
+		</url-pattern>
+
+</servlet-mapping>
 </web-app>

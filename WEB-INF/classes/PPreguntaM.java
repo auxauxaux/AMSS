@@ -1,7 +1,7 @@
 import java.util.Date;
 import java.util.ArrayList;
 public class PPreguntaM{
-	//Esto podria ser solo un objeto para los dos tipos de preguntas
+
 	private int id;
 	private String texto;
 	private Date fecha;

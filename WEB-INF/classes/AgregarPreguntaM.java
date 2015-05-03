@@ -26,8 +26,8 @@ public class AgregarPreguntaM extends HttpServlet{
 			String datetime = sdf.format(fecha);
 			
 			String query = "INSERT INTO Pregunta_multiple(texto, fecha, id_administracion) VALUES('"+texto+"', '"+datetime+"', '"+supervisor+"');";
-			System.out.println(query);
 			dbc.executeUpdate(query);
+			
 			disp = getServletContext().getRequestDispatcher("/preguntaMAgregada.jsp");
 			
 			
