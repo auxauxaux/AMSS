@@ -24,7 +24,7 @@
        				<div class="row">
           				<div class="col-md-8">
             				<h3>
-              					Bienvenido
+              					Bienvenido ${sessionScope.logged.nombre}
             				</h3>
             				<p>
               					Login de supervisor exitoso

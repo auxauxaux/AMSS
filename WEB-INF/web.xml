@@ -438,4 +438,29 @@
 		</url-pattern>
 
 </servlet-mapping>
+<!-- ***************Sub Editar PreguntaM****************-->
+<servlet>
+
+	 	<servlet-name>
+			 subeditarPreguntaM
+		</servlet-name>
+		
+		<servlet-class>
+			 SubmitEditarPreguntaM
+		</servlet-class>
+		
+
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			subeditarPreguntaM
+		</servlet-name>
+
+		<url-pattern>
+			/subeditar_preguntaM
+		</url-pattern>
+
+</servlet-mapping>
 </web-app>

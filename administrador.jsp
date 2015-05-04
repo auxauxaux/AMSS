@@ -24,7 +24,7 @@
        				<div class="row">
           				<div class="col-md-8">
             				<h3>
-              					Bienvenido
+              					Bienvenido ${sessionScope.logged.nombre}
             				</h3>
             				<p>
               					Login de supervisor exitoso
@@ -39,6 +39,11 @@
           					<form action="./preguntas" method="post">
 			        			<button type="submit" class="btn btn-info">
     			      				Manejar Entidades
+		        				</button>
+        					</form>
+        					<form action="./preguntas" method="post">
+			        			<button type="submit" class="btn btn-info">
+    			      				Manejar Cuestionarios
 		        				</button>
         					</form>
           				</div>

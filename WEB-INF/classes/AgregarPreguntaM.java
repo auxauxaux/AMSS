@@ -36,7 +36,7 @@ public class AgregarPreguntaM extends HttpServlet{
 			System.out.println(opcionesA.length);
 			
 			for(int i = 0; i<opcionesA.length; i++){
-				query = "INSERT INTO Opcion(texto, posicion, id_pregunta) VALUES('"+opcionesA[i]+"', '"+i+1+"', '"+id+"');";
+				query = "INSERT INTO Opcion(texto, posicion, id_pregunta) VALUES('"+opcionesA[i]+"', '"+(i+1)+"', '"+id+"');";
 				dbc.executeUpdate(query);
 			}
 							

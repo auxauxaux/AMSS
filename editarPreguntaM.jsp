@@ -32,7 +32,6 @@
 			
 			
 			function agregarM(){
-				alert(opciones[2]);
 				document.getElementById("opciones").value = document.getElementById("opciones").value + opciones[numOp]+ "$@";
 				document.getElementById("aux").innerHTML = document.getElementById("aux").innerHTML + "<tr><td><div id = 'op"+numOp+"'> "+opciones[numOp]+"</td> <td><input type = 'button' value = 'borrar' onclick=\"borrar("+numOp+",'"+opciones[numOp]+"')\" /> </div></td></tr>";
 				numOp++;
@@ -56,15 +55,11 @@
 				
 			}
 			
-			//<c:forEach items = "${pregunta.opciones}" var = "opcion" varStatus="status">
-			//	opcionesP.push(${opcion.texto});
-			//</c:forEach>
-		
 		</script>
 	</head>
 	<body>
 	
-	<form method = "post" name = "preguntaM" onsubmit="return (validate());" action = "./agregar_preguntaM">
+	<form method = "post" name = "preguntaM" onsubmit="return (validate());" action = "./subeditar_preguntaM">
 	            <center>
 	                <div id ="agregarPregunta">
 	                    <fieldset>
@@ -88,18 +83,19 @@
 	                        
 	                        <table>
 	                            <th>Opciones</th>
-	                            <c:forEach items = "${pregunta.opciones}" var = "opcion">
-	                            	<script>
-		                            	agregarM();
-	                            	</script>
-	                            </c:forEach>
 	                            <tr><td><div id = "aux"></div><td></tr>
 	                        </table>
 							<input type="hidden" name="opciones" id="opciones" value = ""/>
+							<input type = "hidden" name = "preguntaM" id="preguntaM" value = "${pregunta.id}">
+							<c:forEach items = "${pregunta.opciones}" var = "opcion">
+	                            	<script>
+		                            	agregarM();
+	                            	</script>
+	                        </c:forEach>
 	                    </fieldset>
 	                </div>
 	                <input type="button" onclick="alert(document.getElementById('opciones').value);" value="agregadas"/>
-	                <input type = "submit" value="Agregar Pregunta">
+	                <input type = "submit" value="Editar Pregunta">
 	                
 	            </center>
 	</form>
