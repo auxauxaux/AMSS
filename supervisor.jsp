@@ -5,26 +5,70 @@
 <html>
 <head>
 <title>Supervisor</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+    rel="stylesheet">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
+    rel="stylesheet">
 </head>
 <body>
 
 	<c:choose> 
 		<c:when test="${sessionScope.logged != null && sessionScope.logged.rol == 1}">
-			Login de Supervisor exitoso
+
+
+			<div class="container">
+  			    <div class="well">
+       				<div class="row">
+          				<div class="col-md-8">
+            				<h3>
+              					Bienvenido
+            				</h3>
+            				<p>
+              					Login de supervisor exitoso
+            				</p>
+          				</div>
+          				<div class="col-md-4">
+              				<a href="./logout" class="btn btn-link pull-right">Log out</a>
+				        </div>
+			    	</div>
+        			<div class="row">
+          				<div class="col-md-3">
+              				<form action="./administradores" method="post">
+			        			<button type="submit" class="btn btn-info">
+    			      				Manejar administradores
+		        				</button>
+        					</form>
+          				</div>
+          			<div class="col-md-3">
+						<form action="./preguntas" method="post">
+	    		    		<button type="submit" class="btn btn-info">
+		    	      			Manejar preguntas
+        					</button>
+		        		</form>
+          			</div>
+          			<div class="col-md-3">
+          				<!--aqui puedes meter mas botones
+          				puedes hacer mas columnas pero la suma de col-md-x debe ser 12-->
+          			</div>
+          			<div class="col-md-3">
+          			</div>
+        		</div>
+		      </div>
+    		</div>
+		    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
+		    </script>
+		    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js">
+		    </script>
 		</c:when>
 		<c:otherwise>
 			<c:redirect url="./index.jsp" />
 		</c:otherwise>
 		
 	</c:choose>
-	<a href="./logout">log out</a>
-	<form action="./administradores" method="post">
-		<input type="submit" value="Manejar administradores" />
-	</form>
-	<form action="./preguntas" method="post">
-		<input type="submit" value="Manejar preguntas" />
-	</form>
-		
-
+	
+	
 </body>
 </html>

@@ -5,19 +5,33 @@
 <html>
 <head>
 <title>Supervisor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+    rel="stylesheet">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
+    rel="stylesheet">
 </head>
 <body>
 
-		<table border = "1">
-			<tr>
-				<th>Usuario</th>
+
+ <div class="container">
+      <div class="well">
+        <h3>
+          Administradores
+        </h3>
+        <table class="table table-striped table-condensed">
+          <tbody>
+            <tr>
+ 				<th>Usuario</th>
 				<th>Nombre(s)</th>
 				<th>Apellido Paterno</th>
 				<th>Apellido Materno</th>
 				<th>Tel&eacute;fono</th>
 				<th>Correo</th>
 				<th>Direcci&oacute;n</th>
-			</tr>
+            </tr>
 			<c:forEach items="${admins}" var = "tuple">
 				<tr>
 					<td>${tuple.id}</td>
@@ -30,20 +44,36 @@
 					<td>
 						<form action="./editaradmin" method="post">
 							<input type = "hidden" value = "${tuple.id}" name="editar" id="editar">
-							<input type="submit" value="Modificar" />
+								<button type="submit" class="btn btn-info">
+      								Modificar
+							    </button>
 						</form>
 					</td>
 					<td>
 						<form action="./eliminaradmin" method="post">
 							<input type ="hidden" value = "${tuple.id}" name = "eliminar" id="eliminar">
-							<input type="submit" value="Eliminar" />
+								<button type="submit" class="btn btn-info">
+      								Eliminar
+							    </button>
 						</form>
 					</td>
 				</tr>
 			</c:forEach>
-		</table><br>
+          </tbody>
+        </table>
+		<br />
 		<form action = "./agregarAdministrador.jsp" method = "post">
-			<input type = "submit" value = "Agregar" />
+			<button type="submit" class="btn btn-info">
+      			Agregar
+		    </button>
 		</form>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"
+    >
+    </script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"
+    >
+    </script>
 </body>
 </html>

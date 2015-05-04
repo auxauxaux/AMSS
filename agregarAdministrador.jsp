@@ -4,6 +4,13 @@
 <html>
 	<head>
 		<title>Agregar Administrador</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta name="description" content="">
+    	<meta name="author" content="">
+	    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+    	rel="stylesheet">
+	    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
+    	rel="stylesheet">
 		<script type = "text/javascript">
             function validate(){
                 var usuario = document.forms["administrador"]["usuario"].value;
@@ -128,7 +135,7 @@
 	                                <td>&nbsp;</td>
 	                            </tr>
 	                            <tr>
-	                                <td colspan = "6"><input class = "button" type="submit" value="Guardar"/></td>
+	                                <td colspan = "6"><button type="submit" class="btn btn-primary">Guardar</button></td>
 	                            </tr>
 	                            
 	                        </table>
@@ -136,5 +143,11 @@
 	                </div>
 	            </center>
 	        </form>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"
+		    >
+		    </script>
+		    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"
+		    >
+		    </script>
 	        </body>
 </html>

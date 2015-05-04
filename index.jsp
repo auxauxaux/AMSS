@@ -20,7 +20,7 @@
 				<body>
 				
 				<div class="container">
-			      <div class="jumbotron">
+			      <div class="well">
 			        <h1>
           				Bienvenidos a la aplicaci&oacute;n
 			        </h1>
