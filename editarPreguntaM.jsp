@@ -4,6 +4,15 @@
 <html>
 	<head>
 		<title>Editar Pregunta</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta name="description" content="">
+    	<meta name="author" content="">
+	    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+    	rel="stylesheet">
+	    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
+    	rel="stylesheet">
+		
 		<script type = "text/javascript">
             function validate(){
                 var pregunta = document.forms["pregunta"]["texto"].value;
@@ -33,13 +42,13 @@
 			
 			function agregarM(){
 				document.getElementById("opciones").value = document.getElementById("opciones").value + opciones[numOp]+ "$@";
-				document.getElementById("aux").innerHTML = document.getElementById("aux").innerHTML + "<tr><td><div id = 'op"+numOp+"'> "+opciones[numOp]+"</td> <td><input type = 'button' value = 'borrar' onclick=\"borrar("+numOp+",'"+opciones[numOp]+"')\" /> </div></td></tr>";
+				document.getElementById("aux").innerHTML = document.getElementById("aux").innerHTML + "<tr><td><div id = 'op"+numOp+"'> "+opciones[numOp]+"</td> <td><input type = 'button' value = 'borrar' class='btn btn-info' onclick=\"borrar("+numOp+",'"+opciones[numOp]+"')\" /> </div></td></tr>";
 				numOp++;
 			}
 			function agregar(){
 				var op = document.getElementById("pregunta").value;
 				document.getElementById("opciones").value = document.getElementById("opciones").value + op + "$@";
-				document.getElementById("aux").innerHTML = document.getElementById("aux").innerHTML + "<tr><td><div id='op"+numOp+"'> "+op+"</td> <td><input type='button' value='borrar' onclick=\"borrar("+numOp+",'"+op+"')\" /> </div></td></tr>";
+				document.getElementById("aux").innerHTML = document.getElementById("aux").innerHTML + "<tr><td><div id='op"+numOp+"'> "+op+"</td> <td><input type='button' class='btn btn-info' value='borrar' onclick=\"borrar("+numOp+",'"+op+"')\" /> </div></td></tr>";
 				numOp++;
 				document.getElementById("pregunta").value="";
 			}
@@ -79,7 +88,7 @@
 	                    <fieldset>
 	                        <legend>Opciones</legend>
 	                        Opci&oacute;n: <input type="text" name="pregunta" id="pregunta" />
-	                        <input type="button" onclick="agregar()" value="Agregar"/>
+	                        <input type="button" class="btn btn-info" onclick="agregar()" value="Agregar"/>
 	                        
 	                        <table>
 	                            <th>Opciones</th>
@@ -94,10 +103,18 @@
 	                        </c:forEach>
 	                    </fieldset>
 	                </div>
-	                <input type="button" onclick="alert(document.getElementById('opciones').value);" value="agregadas"/>
-	                <input type = "submit" value="Editar Pregunta">
-	                
+	                <!--<input type="button" onclick="alert(document.getElementById('opciones').value);" value="agregadas"/>-->
+					<button type="submit" class="btn btn-info">
+				      Editar pregunta
+				    </button>	                
 	            </center>
 	</form>
+	
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"
+		    >
+		    </script>
+		    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"
+		    >
+		    </script>
 	</body>
 </html>
