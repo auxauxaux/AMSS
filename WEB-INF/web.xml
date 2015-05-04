@@ -463,4 +463,90 @@
 		</url-pattern>
 
 </servlet-mapping>
+<!-- ***************Upload CSV****************-->
+<servlet>
+	   <servlet-name>UploadServlet</servlet-name>
+	   <servlet-class>UploadServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	   <servlet-name>UploadServlet</servlet-name>
+	   <url-pattern>/UploadServlet</url-pattern>
+</servlet-mapping>
+<!-- ***************Tabla Cuestionarios****************-->
+<servlet>
+
+	 	<servlet-name>
+			 tablaCuestionarios
+		</servlet-name>
+		
+		<servlet-class>
+			 TablaCuestionarios
+		</servlet-class>
+		
+
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			tablaCuestionarios
+		</servlet-name>
+
+		<url-pattern>
+			/tablaCuestionarios
+		</url-pattern>
+
+</servlet-mapping>
+<!-- ***************Cargar Preguntas para cuestinario****************-->
+<servlet>
+
+	 	<servlet-name>
+			 preguntasCuestionario
+		</servlet-name>
+		
+		<servlet-class>
+			CargarPCuestionario
+		</servlet-class>
+		
+
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			preguntasCuestionario
+		</servlet-name>
+
+		<url-pattern>
+			/pregCuestionario
+		</url-pattern>
+
+</servlet-mapping>
+<!-- ***************Agregar Cuestionario****************-->
+<servlet>
+
+	 	<servlet-name>
+			 agregarCuestionario
+		</servlet-name>
+		
+		<servlet-class>
+			AgregarCuestionario
+		</servlet-class>
+		
+
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			agregarCuestionario
+		</servlet-name>
+
+		<url-pattern>
+			/agregarCuestionario
+		</url-pattern>
+
+</servlet-mapping>
+
 </web-app>

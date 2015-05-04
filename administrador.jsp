@@ -38,10 +38,20 @@
           				<div class="col-md-3">
           					<form action="./preguntas" method="post">
 			        			<button type="submit" class="btn btn-info">
-    			      				Manejar Entidades
+    			      				Manejar Estados
 		        				</button>
         					</form>
         					<form action="./preguntas" method="post">
+			        			<button type="submit" class="btn btn-info">
+    			      				Manejar Municipios
+		        				</button>
+        					</form>
+        					<form action="./preguntas" method="post">
+			        			<button type="submit" class="btn btn-info">
+    			      				Manejar Localidades
+		        				</button>
+        					</form>
+        					<form action="./tablaCuestionarios" method="post">
 			        			<button type="submit" class="btn btn-info">
     			      				Manejar Cuestionarios
 		        				</button>
