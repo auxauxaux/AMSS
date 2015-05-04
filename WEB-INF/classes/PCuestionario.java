@@ -25,6 +25,12 @@ public class PCuestionario{
 	public String getIdA(){
 		return idA;
 	}
+	public ArrayList<PPreguntaA> getPreguntasA(){
+		return preguntasA;
+	}
+	public ArrayList<PPreguntaM> getPreguntasM(){
+		return preguntasM;
+	}
 	public void setId(int id){
 		this.id = id;
 	}
@@ -47,5 +53,6 @@ public class PCuestionario{
 			preguntasM.add(m);
 		}
 	}
+	
 	
 }
