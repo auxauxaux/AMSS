@@ -23,6 +23,7 @@
 				document.getElementById("opciones").value = document.getElementById("opciones").value + op + "$@";
 				document.getElementById("aux").innerHTML = document.getElementById("aux").innerHTML + "<tr><td><div id='op"+numOp+"'> "+op+"</td> <td><input type='button' value='borrar' onclick=\"borrar("+numOp+",'"+op+"')\" /> </div></td></tr>";
 				numOp++;
+				document.getElementById("pregunta").value="";
 			}
 			
 			function borrar(num, txt){
