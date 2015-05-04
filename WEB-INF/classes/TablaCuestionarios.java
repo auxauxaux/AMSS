@@ -83,7 +83,9 @@ public class TablaCuestionarios extends HttpServlet{
 					c.addA(p);
 				}
 				preguntasA.clear();
+				cuestionarios.add(c);
 			}
+			
 			
 			request.setAttribute("cuestionarios",cuestionarios);
 			disp = getServletContext().getRequestDispatcher("/tablaCuestionarios.jsp");
