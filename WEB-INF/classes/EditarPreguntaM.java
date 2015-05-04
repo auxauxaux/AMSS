@@ -16,7 +16,7 @@ public class EditarPreguntaM extends HttpServlet{
 			RequestDispatcher disp = null;
 			DBConnection dbc = new DBConnection();
 			
-			int preguntaID = Integer.parseInt(request.getParameter("eliminar"));
+			int preguntaID = Integer.parseInt(request.getParameter("editar"));
 			
 			String query = "SELECT id_Pregunta_multiple, texto, fecha, id_administracion FROM Pregunta_multiple WHERE id_Pregunta_multiple = "+preguntaID;
 			ResultSet res = dbc.executeQuery(query);
@@ -31,17 +31,25 @@ public class EditarPreguntaM extends HttpServlet{
 				pregunta = new PPreguntaM(id,texto,fecha, supervisor);
 			}
 			
-			query = "SELECT * FROM Opcion WHERE id_Opcion="+pregunta.getId();
+			query = "SELECT * FROM Opcion WHERE id_pregunta="+pregunta.getId();
 			
 			res = dbc.executeQuery(query);
 			
 			while(res.next()){
 				POpcion opcion = new POpcion();
-				//opcion.setId()
+				opcion.setId(res.getInt("id_Opcion"));
+				opcion.setTexto(res.getString("texto"));
+				opcion.setPosicion(res.getInt("posicion"));
+				opcion.setIdP(res.getInt("id_pregunta"));
+				
+				pregunta.add(opcion);
 				
 			}
-			disp = getServletContext().getRequestDispatcher("/editarPregunta.jsp");
+			
+			disp = getServletContext().getRequestDispatcher("/editarPreguntaM.jsp");
+			
 			request.setAttribute("pregunta", pregunta);
+			
 			disp.forward(request,response);
 			
 						

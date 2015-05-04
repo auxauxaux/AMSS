@@ -98,7 +98,7 @@
 					</td>
 					<td>
 						<form action="./eliminar_pregunta_multiple" method="post">
-							<input type ="hidden" value = "${tupleM.id}" name = "eliminar">
+							<input type ="hidden" value = "${tupleM.id}" name = "eliminar" id="eliminar">
 							<button type="submit" class="btn btn-info">
       							Eliminar
 							</button>

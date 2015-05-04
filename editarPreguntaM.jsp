@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 	<head>
-		<title>Agregar Pregunta</title>
+		<title>Editar Pregunta</title>
 		<script type = "text/javascript">
             function validate(){
                 var pregunta = document.forms["pregunta"]["texto"].value;
@@ -17,7 +17,26 @@
         <script>
 		
 			var numOp=0;
-		
+			
+			var opciones = [
+			
+			<c:forEach items="${pregunta.opciones}" var="opcion" varStatus="opcionStatus">  
+				'${opcion.texto}'
+				<c:if test="${!opcionStatus.last}">    
+					,    
+				</c:if>   
+			</c:forEach>
+			]
+			
+			
+			
+			
+			function agregarM(){
+				alert(opciones[2]);
+				document.getElementById("opciones").value = document.getElementById("opciones").value + opciones[numOp]+ "$@";
+				document.getElementById("aux").innerHTML = document.getElementById("aux").innerHTML + "<tr><td><div id = 'op"+numOp+"'> "+opciones[numOp]+"</td> <td><input type = 'button' value = 'borrar' onclick=\"borrar("+numOp+",'"+opciones[numOp]+"')\" /> </div></td></tr>";
+				numOp++;
+			}
 			function agregar(){
 				var op = document.getElementById("pregunta").value;
 				document.getElementById("opciones").value = document.getElementById("opciones").value + op + "$@";
@@ -25,7 +44,7 @@
 				numOp++;
 				document.getElementById("pregunta").value="";
 			}
-			
+						
 			function borrar(num, txt){
 				var borrar = document.getElementById("op"+num);
 				var padre = document.getElementById("aux")
@@ -36,6 +55,10 @@
 				document.getElementById("opciones").value=op;
 				
 			}
+			
+			//<c:forEach items = "${pregunta.opciones}" var = "opcion" varStatus="status">
+			//	opcionesP.push(${opcion.texto});
+			//</c:forEach>
 		
 		</script>
 	</head>
@@ -43,7 +66,7 @@
 	
 	<form method = "post" name = "preguntaM" onsubmit="return (validate());" action = "./agregar_preguntaM">
 	            <center>
-	                <div id ="agregarAdministrador">
+	                <div id ="agregarPregunta">
 	                    <fieldset>
 	                        <legend>Informaci&oacute;n</legend>
 	                        <table>
@@ -52,7 +75,7 @@
 	                            </tr>
 	                            <tr>
 	                            	<td>Pregunta:</td>
-	                                <td><input type="text" name="texto" maxlength="1000"></td>
+	                                <td><input type="text" name="texto" maxlength="1000" value="${pregunta.texto}"></td>
 	                                <input type="hidden" name="supervisor" value="${sessionScope.logged.id}">
 	                            </tr>
 	                        </table>
@@ -65,9 +88,14 @@
 	                        
 	                        <table>
 	                            <th>Opciones</th>
+	                            <c:forEach items = "${pregunta.opciones}" var = "opcion">
+	                            	<script>
+		                            	agregarM();
+	                            	</script>
+	                            </c:forEach>
 	                            <tr><td><div id = "aux"></div><td></tr>
 	                        </table>
-							<input type="hidden" name="opciones" id="opciones" />
+							<input type="hidden" name="opciones" id="opciones" value = ""/>
 	                    </fieldset>
 	                </div>
 	                <input type="button" onclick="alert(document.getElementById('opciones').value);" value="agregadas"/>
