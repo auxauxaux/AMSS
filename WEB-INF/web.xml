@@ -413,4 +413,29 @@
 		</url-pattern>
 
 </servlet-mapping>
+<!-- ***************Editar PreguntaM****************-->
+<servlet>
+
+	 	<servlet-name>
+			 editarPreguntaM
+		</servlet-name>
+		
+		<servlet-class>
+			 EditarPreguntaM
+		</servlet-class>
+		
+
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			editarPreguntaM
+		</servlet-name>
+
+		<url-pattern>
+			/editar_pregunta_multiple
+		</url-pattern>
+
+</servlet-mapping>
 </web-app>
