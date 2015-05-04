@@ -72,7 +72,7 @@
 						</form>
 					</td>
 					<td>
-						<form action="./eliminar_pregunta" method="post">
+						<form action="./eliminar_pregunta_multiple" method="post">
 							<input type ="hidden" value = "${tupleM.id}" name = "eliminar">
 							<input type="submit" value="Eliminar" />
 						</form>

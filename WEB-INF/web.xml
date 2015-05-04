@@ -388,4 +388,29 @@
 		</url-pattern>
 
 </servlet-mapping>
+<!-- ***************Eliminar PreguntaM****************-->
+<servlet>
+
+	 	<servlet-name>
+			 eliminarPreguntaM
+		</servlet-name>
+		
+		<servlet-class>
+			 EliminarPreguntaM
+		</servlet-class>
+		
+
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			eliminarPreguntaM
+		</servlet-name>
+
+		<url-pattern>
+			/eliminar_pregunta_multiple
+		</url-pattern>
+
+</servlet-mapping>
 </web-app>

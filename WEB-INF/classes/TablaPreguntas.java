@@ -26,7 +26,7 @@ public class TablaPreguntas extends HttpServlet{
 				PPreguntaA pregunta = new PPreguntaA();
 				pregunta.setId(res.getInt("id_Pregunta_abierta"));
 				pregunta.setTexto(res.getString("texto"));
-				pregunta.setFecha(res.getDate("fecha"));
+				pregunta.setFecha(res.getTimestamp("fecha"));
 				pregunta.setIdA(res.getString("id_administracion"));
 								
 				preguntas.add(pregunta);
@@ -40,7 +40,7 @@ public class TablaPreguntas extends HttpServlet{
 				PPreguntaM pregunta = new PPreguntaM();
 				pregunta.setId(res.getInt("id_Pregunta_multiple"));
 				pregunta.setTexto(res.getString("texto"));
-				pregunta.setFecha(res.getDate("fecha"));
+				pregunta.setFecha(res.getTimestamp("fecha"));
 				pregunta.setIdA(res.getString("id_administracion"));
 				
 				preguntasM.add(pregunta);
