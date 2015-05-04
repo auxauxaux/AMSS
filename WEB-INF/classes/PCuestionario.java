@@ -37,4 +37,15 @@ public class PCuestionario{
 	public void setIdA(String idA){
 		this.idA = idA;
 	}
+	public void addA(PPreguntaA p){
+		if(preguntasA!=null){
+			preguntasA.add(p);
+		}
+	}
+	public void addM(PPreguntaM m){
+		if(preguntasM!=null){
+			preguntasM.add(m);
+		}
+	}
+	
 }

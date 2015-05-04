@@ -26,7 +26,8 @@
             <tr>
  				<th>id</th>
 				<th># Preguntas</th>
-				<th>Preguntas</th>
+				<th>Preguntas Abiertas</th>
+				<th>Opci&oacute;n M&uacute;ltiple</th>
 				<th>Fecha</th>
 				<th>Administrador</th>
 				<th colspan="2">Acci&oacute;n</th>
@@ -35,7 +36,20 @@
 				<tr>
 					<td>${tuple.id}</td>
 					<td>${tuple.preguntas}</td>
-					<td>Un Dropdown</td>
+					<td>
+						<select>
+							<c:forEach items="${cuestionario.preguntasA}" var = "pa">
+								<option value = "${pa.id}">"${pa.texto}"</option>
+							</c:forEach>
+						</select>
+					</td>
+					<td>
+						<select>
+							<c:forEach items="${cuestionario.preguntasM}" var = "pm">
+								<option value = "${pm.id}">"${pm.texto}"</option>
+							</c:forEach>
+						</select>
+					</td>
 					<td>${tuple.fecha}</td>
 					<td>${tuple.idA}</td>
 					<td>

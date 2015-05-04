@@ -21,6 +21,9 @@ public class TablaCuestionarios extends HttpServlet{
 			ResultSet res = dbc.executeQuery(query);
 			
 			ArrayList<PCuestionario> cuestionarios = new ArrayList<PCuestionario>();
+			ArrayList<PPreguntaA> preguntasA = new ArrayList<PPreguntaA>();
+			ArrayList<PPreguntaM> preguntasM = new ArrayList<PPreguntaM>();
+			
 			
 			while(res.next()){
 				PCuestionario cuestionario = new PCuestionario();
@@ -30,6 +33,56 @@ public class TablaCuestionarios extends HttpServlet{
 				cuestionario.setIdA(res.getString("id_administracion"));
 				
 				cuestionarios.add(cuestionario);
+			}
+			
+			for(int i=0;i<cuestionarios.size();i++){
+				PCuestionario c = cuestionarios.get(i);
+			
+				String queryM = "SELECT id_pregunta FROM PreguntaM_Cuestionario WHERE id_cuestionario="+c.getId();
+				
+				res = dbc.executeQuery(queryM);
+				
+				while(res.next()){
+					PPreguntaM p =  new PPreguntaM();
+					p.setId(res.getInt("id_pregunta"));
+					
+					preguntasM.add(p);
+				}
+				
+				for(int j = 0; j<preguntasM.size(); j++){
+					PPreguntaM p = preguntasM.get(j);
+					
+					queryM = "SELECT texto FROM Pregunta_multiple WHERE id_Pregunta_multiple="+p.getId();
+					res = dbc.executeQuery(queryM);
+					
+					res.next();
+					p.setTexto(res.getString("texto"));
+					c.addM(p);
+				}
+				preguntasM.clear();
+				
+				queryM = "SELECT id_pregunta FROM PreguntaA_Cuestionario WHERE id_cuestionario="+c.getId();
+				
+				res = dbc.executeQuery(queryM);
+				
+				while(res.next()){
+					PPreguntaA p = new PPreguntaA();
+					p.setId(res.getInt("id_pregunta"));
+					
+					preguntasA.add(p);
+				}
+				
+				for(int j = 0; j<preguntasA.size(); j++){
+					PPreguntaA p = preguntasA.get(j);
+					
+					queryM = "SELECT texto FROM Pregunta_abierta WHERE id_Pregunta_abierta="+p.getId();
+					res = dbc.executeQuery(queryM);
+					
+					res.next();
+					p.setTexto(res.getString("texto"));
+					c.addA(p);
+				}
+				preguntasA.clear();
 			}
 			
 			request.setAttribute("cuestionarios",cuestionarios);
