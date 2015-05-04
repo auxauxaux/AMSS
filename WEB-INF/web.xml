@@ -548,5 +548,55 @@
 		</url-pattern>
 
 </servlet-mapping>
+<!-- ***************Upload Servlet****************-->
+<servlet>
+
+	 	<servlet-name>
+			 uploadEstado
+		</servlet-name>
+		
+		<servlet-class>
+			UploadServletEstado
+		</servlet-class>
+		
+
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			uploadEstado
+		</servlet-name>
+
+		<url-pattern>
+			/upload_estado
+		</url-pattern>
+
+</servlet-mapping>
+<!-- ***************Tabla Muck****************-->
+<servlet>
+
+	 	<servlet-name>
+			 tablaMock
+		</servlet-name>
+		
+		<servlet-class>
+			TablaCuestionarioFlash
+		</servlet-class>
+		
+
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			uploadEstado
+		</servlet-name>
+
+		<url-pattern>
+			/upload_estado
+		</url-pattern>
+
+</servlet-mapping>
 
 </web-app>

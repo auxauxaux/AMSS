@@ -1,6 +1,10 @@
 import java.io.*;
 import java.util.*;
  
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.sql.*;
+
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,7 +17,7 @@ import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.io.output.*;
 
-public class UploadServlet extends HttpServlet {
+public class UploadServletEstado extends HttpServlet {
    
    private boolean isMultipart;
    private String filePath;
@@ -85,14 +89,26 @@ public class UploadServlet extends HttpServlet {
             }*/
 
             BufferedReader br = new BufferedReader(new InputStreamReader(fi.getInputStream()));
+            RequestDispatcher disp = null;
+			DBConnection dbc = new DBConnection();
             
             //parsear y dar de alta
  			String sCurrentLine;
+ 			br.readLine();
+ 			
 			while ((sCurrentLine = br.readLine()) != null) {
-				System.out.println(sCurrentLine);
+				String[] estados = sCurrentLine.split(",");
+				int id = Integer.parseInt(estados[0]);
+				String nombre = estados[1];
+				String query = "INSERT INTO Estado VALUES("+id+",'"+nombre+"')";
+				dbc.executeUpdate(query);
+				System.out.println(id);
+				System.out.println(nombre);
 			}
 
 			br.close();
+			disp = getServletContext().getRequestDispatcher("/estadosCargados.jsp");
+			disp.forward(request,response);
          }
       }
 
