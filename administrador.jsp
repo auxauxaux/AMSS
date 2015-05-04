@@ -36,7 +36,7 @@
 			    	</div>
         			<div class="row">
           				<div class="col-md-3">
-          					<form action="./preguntas" method="post">
+          					<form action="./estados.jsp" method="post">
 			        			<button type="submit" class="btn btn-info">
     			      				Manejar Estados
 		        				</button>
