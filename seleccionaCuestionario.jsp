@@ -18,7 +18,7 @@
 	
 	<div class="container">
       <div class="well">
-        	<form action = "./agregarCuestionario" method = "post">
+        	<form action = "./contestar" method = "post">
         		<h3>
 					Cuestionarios Disponibles
 		  		</h3>
@@ -42,8 +42,6 @@
 		        </table>
 				<br />
 		<br />
-		</form>
-		<form action = "./contestar" method = "post">
 			<button type="submit" class="btn btn-info">
       			Contestar
 		    </button>

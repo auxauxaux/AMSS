@@ -16,8 +16,6 @@ public class Contestar extends HttpServlet{
 			
 			RequestDispatcher disp = null;
 			DBConnection dbc = new DBConnection();
-			String ids = request.getParameter("cuestionario");
-			System.out.println(ids);
 			int id = Integer.parseInt(request.getParameter("cuestionario"));
 			String query = "SELECT id_Cuestionario, nombre, fecha FROM Cuestionario WHERE id_Cuestionario="+id;
 			
