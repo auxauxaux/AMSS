@@ -19,6 +19,7 @@ public class AgregarCuestionario extends HttpServlet{
 			
 			String[] preguntasA = request.getParameterValues("preguntasA");
 			String[] preguntasM = request.getParameterValues("preguntasM");
+			String nombreC = request.getParameter("nombreC");
 			int numPreguntas = preguntasA.length + preguntasM.length;
 			String admin = request.getParameter("admin");
 			
@@ -26,7 +27,7 @@ public class AgregarCuestionario extends HttpServlet{
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			String datetime = sdf.format(fecha); //este es el bueno
 			
-			String query = "INSERT INTO Cuestionario(numero_preguntas, fecha, id_administracion) VALUES('"+numPreguntas+"', '"+datetime+"', '"+admin+"');";
+			String query = "INSERT INTO Cuestionario(nombre,numero_preguntas, fecha, id_administracion) VALUES('"+nombreC+"', '"+numPreguntas+"', '"+datetime+"', '"+admin+"');";
 			dbc.executeUpdate(query);
 			
 			//Muy importante

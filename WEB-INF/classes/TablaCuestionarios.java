@@ -16,7 +16,7 @@ public class TablaCuestionarios extends HttpServlet{
 			
 			RequestDispatcher disp = null;
 			DBConnection dbc = new DBConnection();
-			String query = "SELECT id_Cuestionario, numero_preguntas, fecha, id_administracion FROM Cuestionario";
+			String query = "SELECT id_Cuestionario, nombre, numero_preguntas, fecha, id_administracion FROM Cuestionario";
 			
 			ResultSet res = dbc.executeQuery(query);
 			
@@ -28,6 +28,7 @@ public class TablaCuestionarios extends HttpServlet{
 			while(res.next()){
 				PCuestionario cuestionario = new PCuestionario();
 				cuestionario.setId(res.getInt("id_Cuestionario"));
+				cuestionario.setNombre(res.getString("nombre"));
 				cuestionario.setPreguntas(res.getInt("numero_preguntas"));
 				cuestionario.setFecha(res.getTimestamp("fecha"));
 				cuestionario.setIdA(res.getString("id_administracion"));

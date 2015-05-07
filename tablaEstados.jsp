@@ -15,60 +15,36 @@
 </head>
 <body>
 
-
- <div class="container">
+	<div class="container">
       <div class="well">
         <h3>
-          Cuestionarios
+          Estados
         </h3>
-        
         <table class="table table-striped table-condensed">
           <tbody>
             <tr>
- 				<th>id</th>
- 				<th>nombre</th>
-				<th># Preguntas</th>
-				<th>Preguntas Abiertas</th>
-				<th>Opci&oacute;n M&uacute;ltiple</th>
-				<th>Fecha</th>
-				<th>Administrador</th>
+ 				<th>ID Estado</th>
+				<th>Nombre</th>
 				<th colspan="2">Acci&oacute;n</th>
             </tr>
-			<c:forEach items="${cuestionarios}" var = "tuple">
+			<c:forEach items="${requestScope.estados}" var = "tuple">
 				<tr>
 					<td>${tuple.id}</td>
 					<td>${tuple.nombre}</td>
-					<td>${tuple.preguntas}</td>
 					<td>
-						<select>
-							<c:forEach items="${tuple.preguntasA}" var = "pa">
-								<option value = "${pa.id}">"${pa.texto}"</option>
-							</c:forEach>
-						</select>
-					</td>
-					<td>
-						<select>
-							<c:forEach items="${tuple.preguntasM}" var = "pm">
-								<option value = "${pm.id}">"${pm.texto}"</option>
-							</c:forEach>
-						</select>
-					</td>
-					<td>${tuple.fecha}</td>
-					<td>${tuple.idA}</td>
-					<td>
-						<form action="./editaradmin" method="post">
+						<form action="./editar_estado" method="post">
 							<input type = "hidden" value = "${tuple.id}" name="editar" id="editar">
-								<button type="submit" class="btn btn-info">
-      								Modificar
-							    </button>
+							<button type="submit" class="btn btn-info">
+      							Modificar
+							</button>
 						</form>
 					</td>
 					<td>
-						<form action="./eliminaradmin" method="post">
-							<input type ="hidden" value = "${tuple.id}" name = "eliminar" id="eliminar">
-								<button type="submit" class="btn btn-info">
-      								Eliminar
-							    </button>
+						<form action="./eliminar_estado" method="post">
+							<input type ="hidden" value = "${tuple.id}" name = "eliminar">
+							<button type="submit" class="btn btn-info">
+      							Eliminar
+							</button>
 						</form>
 					</td>
 				</tr>
@@ -76,14 +52,26 @@
           </tbody>
         </table>
 		<br />
-		<form action = "./pregCuestionario" method = "post">
+		<form action = "./agregarEstado.jsp" method = "post">
 			<button type="submit" class="btn btn-info">
       			Agregar
 		    </button>
 		</form>
-      </div>
+		<form action = "./estados.jsp" method = "post">
+			<button type="submit" class="btn btn-info">
+      			Cargar CSV
+		    </button>
+		</form>
+		<form action = "./eliminar_estados" method = "post">
+			<button type="submit" class="btn btn-info">
+      			Eliminar tabla
+		    </button>
+		</form>
+		
+		</div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"
     >
     </script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"

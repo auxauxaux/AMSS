@@ -27,7 +27,7 @@
               					Bienvenido ${sessionScope.logged.nombre}
             				</h3>
             				<p>
-              					Login de supervisor exitoso
+              					Login de administrador exitoso
             				</p>
           				</div>
           				<div class="col-md-4">
@@ -36,12 +36,12 @@
 			    	</div>
         			<div class="row">
           				<div class="col-md-3">
-          					<form action="./estados.jsp" method="post">
+          					<form action="./tabla_estados" method="post">
 			        			<button type="submit" class="btn btn-info">
     			      				Manejar Estados
 		        				</button>
         					</form>
-        					<form action="./preguntas" method="post">
+        					<form action="./tabla_municipios" method="post">
 			        			<button type="submit" class="btn btn-info">
     			      				Manejar Municipios
 		        				</button>

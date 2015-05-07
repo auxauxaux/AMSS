@@ -27,7 +27,6 @@
 		root
 	</param-value> 
 </context-param>
-
 <context-param> 
 	<description>
 		Password base de datos
@@ -573,15 +572,15 @@
 		</url-pattern>
 
 </servlet-mapping>
-<!-- ***************Tabla Muck****************-->
+<!-- ***************Tabla Estados****************-->
 <servlet>
 
 	 	<servlet-name>
-			 tablaMock
+			 tablaEstados
 		</servlet-name>
 		
 		<servlet-class>
-			TablaCuestionarioFlash
+			TablaEstados
 		</servlet-class>
 		
 
@@ -590,13 +589,186 @@
 <servlet-mapping>
 
 		<servlet-name>
-			uploadEstado
+			tablaEstados
 		</servlet-name>
 
 		<url-pattern>
-			/upload_estado
+			/tabla_estados
 		</url-pattern>
 
 </servlet-mapping>
+<!-- ***************Agregar Estados****************-->
+<servlet>
 
+	 	<servlet-name>
+			 agregarEstado
+		</servlet-name>
+		
+		<servlet-class>
+			AgregarEstado
+		</servlet-class>
+		
+
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			agregarEstado
+		</servlet-name>
+
+		<url-pattern>
+			/alta_estado
+		</url-pattern>
+
+</servlet-mapping>
+<!-- ***************Eliminar Estados****************-->
+<servlet>
+
+	 	<servlet-name>
+			 eliminarEstados
+		</servlet-name>
+		
+		<servlet-class>
+			EliminarEstados
+		</servlet-class>
+		
+
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			eliminarEstados
+		</servlet-name>
+
+		<url-pattern>
+			/eliminar_estados
+		</url-pattern>
+
+</servlet-mapping>
+<!-- ***************Tabla Municipios****************-->
+<servlet>
+
+	 	<servlet-name>
+			 tablaMun
+		</servlet-name>
+		
+		<servlet-class>
+			TablaMunicipios
+		</servlet-class>
+		
+
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			tablaMun
+		</servlet-name>
+
+		<url-pattern>
+			/tabla_municipios
+		</url-pattern>
+
+</servlet-mapping>
+<!-- ***************Upload Municipios****************-->
+<servlet>
+
+	 	<servlet-name>
+			 uploadMun
+		</servlet-name>
+		
+		<servlet-class>
+			UploadMunicipios
+		</servlet-class>
+		
+
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			uploadMun
+		</servlet-name>
+
+		<url-pattern>
+			/upload_municipios
+		</url-pattern>
+
+</servlet-mapping>
+<!-- ***************Eliminar Municipios****************-->
+<servlet>
+
+	 	<servlet-name>
+			 eliminarMun
+		</servlet-name>
+		
+		<servlet-class>
+			EliminarMunicipios
+		</servlet-class>
+		
+
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			eliminarMun
+		</servlet-name>
+
+		<url-pattern>
+			/eliminar_municipios
+		</url-pattern>
+
+</servlet-mapping>
+<!-- ***************Selecciona Cuestionario****************-->
+<servlet>
+
+	 	<servlet-name>
+			 seleccionaCuestionario
+		</servlet-name>
+		
+		<servlet-class>
+			SeleccionaCuestionario
+		</servlet-class>
+		
+
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			seleccionaCuestionario
+		</servlet-name>
+
+		<url-pattern>
+			/selecciona_cuestionario
+		</url-pattern>
+
+</servlet-mapping>
+<!-- ***************Contesta Cuestionario****************-->
+<servlet>
+
+	 	<servlet-name>
+			 contestar
+		</servlet-name>
+		
+		<servlet-class>
+			Contestar
+		</servlet-class>
+		
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			contestar
+		</servlet-name>
+
+		<url-pattern>
+			/contestar
+		</url-pattern>
+
+</servlet-mapping>
 </web-app>

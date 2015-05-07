@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class PCuestionario{
 	
 	private int id;
+	private String nombre;
 	private int preguntas;
 	private Date fecha;
 	private String idA;
@@ -15,6 +16,9 @@ public class PCuestionario{
 	}
 	public int getId(){
 		return id;
+	}
+	public String getNombre(){
+		return nombre;
 	}
 	public int getPreguntas(){
 		return preguntas;
@@ -33,6 +37,9 @@ public class PCuestionario{
 	}
 	public void setId(int id){
 		this.id = id;
+	}
+	public void setNombre(String nombre){
+		this.nombre = nombre;
 	}
 	public void setPreguntas(int preguntas){
 		this.preguntas = preguntas;

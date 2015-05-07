@@ -15,12 +15,14 @@
 </head>
 <body>
 	<h2>Seleccionar preguntas de cuestionario</h2>
+	
 	<div class="container">
       <div class="well">
-        <h3>
-          Preguntas Abiertas
-        </h3>
         	<form action = "./agregarCuestionario" method = "post">
+        		Nombre Cuestionario:<input type="text" name="nombreC" class="textoPA" maxlength="1000">
+        		<h3>
+					Preguntas Abiertas
+		  		</h3>
 		        <table class="table table-striped table-condensed">
 		          <tbody>
 		            <tr>
