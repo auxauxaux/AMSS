@@ -56,20 +56,22 @@
 					<td>${tuple.fecha}</td>
 					<td>${tuple.idA}</td>
 					<td>
+					<!--
 						<form action="./editaradmin" method="post">
 							<input type = "hidden" value = "${tuple.id}" name="editar" id="editar">
 								<button type="submit" class="btn btn-info">
       								Modificar
 							    </button>
-						</form>
+						</form>-->
 					</td>
 					<td>
+					<!--
 						<form action="./eliminaradmin" method="post">
 							<input type ="hidden" value = "${tuple.id}" name = "eliminar" id="eliminar">
 								<button type="submit" class="btn btn-info">
       								Eliminar
 							    </button>
-						</form>
+						</form>-->
 					</td>
 				</tr>
 			</c:forEach>

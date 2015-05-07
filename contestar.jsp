@@ -17,7 +17,7 @@
 	
 	<div class="container">
       <div class="well">
-        	<form action = "./contestar" method = "post">
+        	<form action = "./respondido.jsp" method = "post">
         		<h1>
 					Cuestionario: ${cuestionario.nombre}
 		  		</h1>

@@ -771,4 +771,28 @@
 		</url-pattern>
 
 </servlet-mapping>
+<!-- ***************Agregar Municipio****************-->
+<servlet>
+
+	 	<servlet-name>
+			 agregarMun
+		</servlet-name>
+		
+		<servlet-class>
+			AgregarMunicipio
+		</servlet-class>
+		
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			agregarMun
+		</servlet-name>
+
+		<url-pattern>
+			/alta_municipio
+		</url-pattern>
+
+</servlet-mapping>
 </web-app>

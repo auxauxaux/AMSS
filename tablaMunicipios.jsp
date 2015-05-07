@@ -33,28 +33,28 @@
 					<td>${tuple.id}</td>
 					<td>${tuple.nombre}</td>
 					<td>${tuple.idE}</td>
-					<td>
+					<td><!--
 						<form action="./editar_estado" method="post">
 							<input type = "hidden" value = "${tuple.id}" name="editar" id="editar">
 							<button type="submit" class="btn btn-info">
       							Modificar
 							</button>
-						</form>
+						</form>-->
 					</td>
-					<td>
+					<td><!--
 						<form action="./eliminar_estado" method="post">
 							<input type ="hidden" value = "${tuple.id}" name = "eliminar">
 							<button type="submit" class="btn btn-info">
       							Eliminar
 							</button>
-						</form>
+						</form>-->
 					</td>
 				</tr>
 			</c:forEach>
           </tbody>
         </table>
 		<br />
-		<form action = "./agregarEstado.jsp" method = "post">
+		<form action = "./agregarMunicipio.jsp" method = "post">
 			<button type="submit" class="btn btn-info">
       			Agregar
 		    </button>
