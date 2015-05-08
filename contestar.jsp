@@ -44,6 +44,59 @@
 		  		</c:forEach>
 				<br />
 		<br />
+			Estado:
+			<select>
+				<option>Distrito Federal</option>
+				<option>Aguascalientes</option>
+				<option>Baja California</option>
+				<option>Baja California Sur</option>
+				<option>Campeche</option>
+				<option>Chiapas</option>
+				<option>Chihuahua</option>
+				<option>Coahuila</option>
+				<option>Colima</option>
+				<option>Durango</option>
+				<option>Guanajuato</option>
+				<option>Guerrero</option>
+				<option>Hidalgo</option>
+				<option>Jalisco</option>
+				<option>Estado de M&eacute;xico</option>
+				<option>Michoac&aacute;n</option>
+				<option>Morelos</option>
+				<option>Nayarit</option>
+				<option>Nuevo Le&oacute;n</option>
+				<option>Oaxaca</option>
+				<option>Puebla</option>
+				<option>Quer&eacute;taro</option>
+				<option>Quintana Roo</option>
+				<option>San Luis Potos&iacute;</option>
+				<option>Sinaloa</option>
+				<option>Sonora</option>
+				<option>Tabasco</option>
+				<option>Tamaulipas</option>
+				<option>Tlaxcala</option>
+				<option>Veracruz</option>
+				<option>Yucat&aacute;n</option>
+				<option>Zacatecas</option>
+			</select>
+			Municipio:
+			<select>
+				<option>&Aacute;lvaro Obreg&oacute;n</option>
+				<option>Iztapalapa</option>
+				<option>Iztacalco</option>
+				<option>Xochimilco</option>
+				<option>Asientos</option>
+				<option>Calvillo</option>
+				<option>Campeche</option>
+				<option>Loreto</option>
+				<option>Ju&aacute;rez</option>
+				<option>Reforma</option>
+				<option>El bosque</option>
+				<option>Tecom&aacute;n</option>
+				<option>Aldama</option>
+				<option>Allende</option>
+			</select>
+			<br />
 			<button type="submit" class="btn btn-info">
       			Contestar
 		    </button>

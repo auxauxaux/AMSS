@@ -46,7 +46,7 @@
     			      				Manejar Municipios
 		        				</button>
         					</form>
-        					<form action="./preguntas" method="post">
+        					<form action="./tabla_localidades" method="post">
 			        			<button type="submit" class="btn btn-info">
     			      				Manejar Localidades
 		        				</button>

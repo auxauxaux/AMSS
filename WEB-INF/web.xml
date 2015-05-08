@@ -795,4 +795,52 @@
 		</url-pattern>
 
 </servlet-mapping>
+<!-- ***************Tabla Localidades****************-->
+<servlet>
+
+	 	<servlet-name>
+			 tablaLocalidades
+		</servlet-name>
+		
+		<servlet-class>
+			TablaLocalidades
+		</servlet-class>
+		
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			tablaLocalidades
+		</servlet-name>
+
+		<url-pattern>
+			/tabla_localidades
+		</url-pattern>
+
+</servlet-mapping>
+<!-- ***************Upload Localidades****************-->
+<servlet>
+
+	 	<servlet-name>
+			 uploadLocalidades
+		</servlet-name>
+		
+		<servlet-class>
+			UploadLocalidades
+		</servlet-class>
+		
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			uploadLocalidades
+		</servlet-name>
+
+		<url-pattern>
+			/upload_localidades
+		</url-pattern>
+
+</servlet-mapping>
 </web-app>
