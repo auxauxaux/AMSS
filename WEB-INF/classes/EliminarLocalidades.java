@@ -21,7 +21,7 @@ public class EliminarLocalidades extends HttpServlet{
 			query = "ALTER TABLE Municipio AUTO_INCREMENT = 1";
 			dbc.executeUpdate(query);
 
-			disp = getServletContext().getRequestDispatcher("/localidadesEliminados.jsp"); //Ver manera de no llevarlo a otro lado para que no se borren los datos(sql en jsp)
+			disp = getServletContext().getRequestDispatcher("/localidadesEliminadas1.jsp"); //Ver manera de no llevarlo a otro lado para que no se borren los datos(sql en jsp)
 			disp.forward(request,response);
 			
 						

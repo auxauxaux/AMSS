@@ -843,15 +843,15 @@
 		</url-pattern>
 
 </servlet-mapping>
-<!-- ***************Eliminar cuestionario****************-->
+<!-- ***************Upload Localidades****************-->
 <servlet>
 
 	 	<servlet-name>
-			 elimcuest
+			 elimloc
 		</servlet-name>
 		
 		<servlet-class>
-			EliminarCuestionario
+			EliminarLocalidades
 		</servlet-class>
 		
 </servlet>
@@ -859,12 +859,13 @@
 <servlet-mapping>
 
 		<servlet-name>
-			elimcuest
+			elimloc
 		</servlet-name>
 
 		<url-pattern>
-			/eliminar_cuestionario
+			/eliminar_localidades
 		</url-pattern>
 
 </servlet-mapping>
+
 </web-app>

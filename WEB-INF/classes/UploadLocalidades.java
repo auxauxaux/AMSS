@@ -106,7 +106,7 @@ public class UploadLocalidades extends HttpServlet {
 			}
 
 			br.close();
-			disp = getServletContext().getRequestDispatcher("/localidadesCargados.jsp");
+			disp = getServletContext().getRequestDispatcher("/localidadesCargadas.jsp");
 			disp.forward(request,response);
          }
       }

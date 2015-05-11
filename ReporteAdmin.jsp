@@ -36,12 +36,12 @@
 			    	</div>
         			<div class="row">
           				<div class="col-md-3">
-          					<form action="/AMSS-master/examples/column-basic/index.jsp" method="post">
+          					<form action="/AMSS/examples/column-basic/index.jsp" method="post">
 			        			<button type="submit" class="btn btn-info">
     			      				Reporte por Estados
 		        				</button>
         					</form>
-                            <form action="/AMSS-master/examples/column-basic/muestra.jsp" method="post">
+                            <form action="/AMSS/examples/column-basic/muestra.jsp" method="post">
 			        			<button type="submit" class="btn btn-info">
     			      				Reporte muestra
 		        				</button>

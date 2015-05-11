@@ -64,7 +64,7 @@
       			Cargar CSV
 		    </button>
 		</form>
-		<form action = "./eliminar_municipios" method = "post">
+		<form action = "./eliminar_localidades" method = "post">
 			<button type="submit" class="btn btn-info">
       			Eliminar tabla
 		    </button>

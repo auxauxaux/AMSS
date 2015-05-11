@@ -37,7 +37,7 @@
 		  			${preguntaM.texto}
 		  			<br />
 		  			<c:forEach items = "${preguntaM.opciones}" var = "opcion">
-		  				${opcion.texto} &nbsp; <input type="radio" name="opciones" value="${opcion.id}"/>
+		  				${opcion.texto} &nbsp; <input type="radio" name="opciones${preguntaM.id}" value="${opcion.id}"/>
 		  			</c:forEach>
 		  			<br />
 		  			<br />
