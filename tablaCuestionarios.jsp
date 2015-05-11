@@ -65,13 +65,13 @@
 						</form>-->
 					</td>
 					<td>
-					<!--
-						<form action="./eliminaradmin" method="post">
+					
+						<form action="./eliminar_cuestionario" method="post">
 							<input type ="hidden" value = "${tuple.id}" name = "eliminar" id="eliminar">
 								<button type="submit" class="btn btn-info">
       								Eliminar
 							    </button>
-						</form>-->
+						</form>
 					</td>
 				</tr>
 			</c:forEach>

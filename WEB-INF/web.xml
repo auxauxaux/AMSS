@@ -843,4 +843,28 @@
 		</url-pattern>
 
 </servlet-mapping>
+<!-- ***************Eliminar cuestionario****************-->
+<servlet>
+
+	 	<servlet-name>
+			 elimcuest
+		</servlet-name>
+		
+		<servlet-class>
+			EliminarCuestionario
+		</servlet-class>
+		
+</servlet>
+
+<servlet-mapping>
+
+		<servlet-name>
+			elimcuest
+		</servlet-name>
+
+		<url-pattern>
+			/eliminar_cuestionario
+		</url-pattern>
+
+</servlet-mapping>
 </web-app>
