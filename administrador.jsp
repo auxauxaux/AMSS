@@ -56,6 +56,11 @@
     			      				Manejar Cuestionarios
 		        				</button>
         					</form>
+                            <form action="./ReporteAdmin.jsp" method="post">
+			        			<button type="submit" class="btn btn-info">
+    			      				Reportes
+		        				</button>
+        					</form>
           				</div>
           			<div class="col-md-3">
           			</div>
@@ -82,4 +87,3 @@
 	
 </body>
 </html>
-

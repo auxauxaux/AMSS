@@ -1,0 +1,169 @@
+<%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
+<!DOCTYPE HTML>
+<html>
+	<head>
+    	
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Reporte de participacion</title>
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<style type="text/css">
+${demo.css}
+		</style>
+		<script type="text/javascript">
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Mexico Participa'
+        },
+        subtitle: {
+            text: 'Reporte de participacion por estado'
+        },
+        xAxis: {
+            categories: [
+                'Aguascalientes',
+				'Baja California',
+				'Baja California Sur',
+				'Campeche',
+				'Chiapas',
+				'Chihuahua',
+				'Coahuila',
+				'Colima',
+				'Distrito Federal',
+				'Durango',
+				'Estado de México',
+				'Guanajuato',
+				'Guerrero',
+				'Hidalgo',
+				'Jalisco',
+				'Michoacán',
+				'Morelos',
+				'Nayarit',
+				'Nuevo León',
+				'Oaxaca',
+				'Puebla',
+				'Querétaro',
+				'Quintana Roo',
+				'San Luis Potosí',
+				'Sinaloa',
+				'Sonora',
+				'Tabasco',
+				'Tamaulipas',
+				'Tlaxcala',
+				'Veracruz',
+				'Yucatán',
+				'Zacatecas',
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Numero de Ciudadanos'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} participantes</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+		
+        subtitle2: {
+            text: 'Rango de edad de participacion'
+        },
+		
+        series: [
+	   {
+            name: 'menores de 18',
+            data: [50, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12,5,15,2,80,90,50,34,66,15,78,89]
+
+        }, {
+            name: '18-24',
+            data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3]
+
+        }, {
+            name: '25-34',
+            data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
+
+        }, {
+            name: '45-54',
+            data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
+
+        }, {
+            name: '54 en adelante',
+            data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
+
+        }
+		]
+    });
+});
+		</script>
+	</head>
+	<body>
+    <%
+String password="root"; 
+String usuario="root";
+String base = "mydb";
+String url="jdbc:mysql://localhost/"+base;
+Class.forName("com.mysql.jdbc.Driver");
+
+String query = "SELECT * FROM `pregunta_abierta` WHERE 1";
+Connection con = DriverManager.getConnection(url, usuario, password);
+
+Statement st = con.createStatement();
+ResultSet res = st.executeQuery(query);
+res.next();
+
+out.println("<table border=1>");
+
+out.println("<tr><th>Id</th><th>texto</th><th>fecha</th><th>admin que agrego la pregunta</tr>");
+
+while (res.next()) {
+
+out.println("<tr>");
+        
+out.println("<td>");    
+        
+out.println(res.getInt("id_Pregunta_abierta"));
+
+out.println("</td><td>");
+
+out.println(res.getString("texto"));
+
+out.println("</td><td>");
+
+out.println(res.getDate("fecha"));
+
+out.println("</td>");
+
+out.println("<td>");    
+        
+out.println(res.getInt("id_administracion"));
+
+out.println("</td><td>");
+
+out.println("</tr>");
+
+}
+
+out.println("</table>");
+%>
+<script src="../../js/highcharts.js"></script>
+<script src="../../js/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+	</body>
+</html>
